@@ -1,0 +1,28 @@
+{
+  "name": "rxjs-play-ground",
+  "version": "1.0.0",
+  "description": "for learning rxjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/epicallan/rxjs-play-ground"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "rxjs",
+    "webpack",
+    "reactive",
+    "functional"
+  ],
+  "author": "epicallan.al@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "^6.0.4",
+    "eslint": "^2.9.0",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-jsx-a11y": "^1.2.0",
+    "eslint-plugin-react": "^5.1.1"
+  }
+}
