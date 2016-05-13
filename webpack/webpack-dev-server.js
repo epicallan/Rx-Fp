@@ -21,6 +21,7 @@ var serverOptions = {
 var app = new Express();
 
 app.use(require('webpack-dev-middleware')(compiler, serverOptions));
+app.use(require('webpack-hot-middleware')(compiler));
 
 app.listen(port, function onAppListening(err) {
   if (err) {
