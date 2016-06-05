@@ -3,4 +3,4 @@ node_modules/
 *.iml
 npm-debug.log
 .DS_Store
-dist
+build/static/bundle.js

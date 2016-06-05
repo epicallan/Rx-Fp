@@ -4,15 +4,18 @@
   "description": "for learning rxjs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/epicallan/rxjs-play-ground"
+    "url": "https://github.com/epicallan/Rx-Fp"
   },
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "lint": "eslint src --cache",
+    "test": " NODE_ENV=test mocha $(find src -name '*-test.js')  --compilers js:babel-core/register",
+    "test-watch": "NODE_ENV=test mocha $(find src -name '*-test.js') --compilers js:babel-core/register --watch"
   },
   "keywords": [
     "rxjs",
-    "webpack",
+    "ramda",
     "reactive",
     "functional"
   ],
@@ -31,12 +34,14 @@
     "eslint-plugin-react": "^5.1.1",
     "json-loader": "^0.5.4",
     "webpack": "^1.13.0",
-    "webpack-dev-middleware": "^1.6.1",
     "webpack-dev-server": "^1.14.1",
-    "webpack-hot-middleware": "^2.10.0"
+    "babel-core": "^6.8.0",
+    "mocha": "^2.3.3",
+    "rimraf": "^2.4.3",
+    "chai": "^3.2.0"
   },
   "dependencies": {
-    "babel-core": "^6.8.0",
-    "express": "^4.13.4"
+    "rxjs": "^5.0.0-beta.8",
+    "ramda": "0.21.0"
   }
 }
