@@ -4,7 +4,7 @@ var webpack = require('webpack');
 module.exports = {
   devtool: 'source-maps',
   entry: [
-    path.join(__dirname, 'src/index.js'),
+    path.join(__dirname, 'src/app.js'),
     'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/dev-server',
   ],

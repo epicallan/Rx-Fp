@@ -3,11 +3,18 @@
     "installedESLint": true,
     "env": {
       "node": true,
-      "mocha": true
+      "mocha": true,
+      "browser": true
     },
     "plugins": [
         "react"
     ],
+    "globals": {
+      "describe": true,
+      "it": true,
+      "sinon": true,
+      "fetch": true
+    },
     "rules": {
       "react/no-multi-comp": 0,
       "import/default": 0,
