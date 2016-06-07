@@ -2,7 +2,7 @@
 
 # About
 
-creates a simple app that the current first 5 repos of a github user.
+creates a simple app that lists the current first 5 repos of a github user.
 
 In this version the returned JSON array containing all the repo objects is turned into
 

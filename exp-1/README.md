@@ -2,9 +2,7 @@
 
 # About
 
-creates a simple app that lists repos of a github user. In this version
-
-we don't make a stream out of the various github repo object
+creates a simple app that lists repos of a github user. 
 
 # Installation and Use
 
