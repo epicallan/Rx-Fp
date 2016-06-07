@@ -8,8 +8,6 @@ I am using ramda as my functional programming library and RXJS 5
 
 # Installation and Use
 
-Go into a the sample you are interested in
-
 run ```npm install```
 
 run ```npm start```

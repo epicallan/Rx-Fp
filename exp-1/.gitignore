@@ -1,6 +1,6 @@
-*.idea/
+.idea/
 node_modules/
-.iml
+*.iml
 npm-debug.log
 .DS_Store
 build/static/bundle.js
