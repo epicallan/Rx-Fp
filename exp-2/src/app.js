@@ -13,8 +13,7 @@ const domElement = (name) => {
 };
 
 // _.prop returns a property from an object
-
-const listItem = _.compose(domElement, _.prop('name'));
+const createlistItem = _.compose(domElement, _.prop('name'));
 
 const url = user =>
   (`https://api.github.com/users/${user}/repos`);
@@ -26,7 +25,7 @@ export const app = Rx.Observable.fromPromise(getData('epicallan'));
 app
   .map(response => response.data)
   .flatMap(data => Rx.Observable.from(data))
-  .map(repoObj => listItem(repoObj))
+  .map(repoObj => createlistItem(repoObj))
   .subscribe(
     item => addToDom(item)
   );
