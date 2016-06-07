@@ -25,6 +25,7 @@ export const app = Rx.Observable.fromPromise(getData('epicallan'));
 app
   .map(response => response.data)
   .flatMap(data => Rx.Observable.from(data))
+  .take(5)
   .map(repoObj => createlistItem(repoObj))
   .subscribe(
     item => addToDom(item)

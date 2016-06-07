@@ -1,7 +1,13 @@
-# Experimental RXJS and functional programming Samples
+# Experimental 2
 
 # About
-I am using ramda as my functional programming library and RXJS 5
+
+creates a simple app that the current first 5 repos of a github user.
+
+In this version the returned JSON array containing all the repo objects is turned into
+
+a stream of repo objects and we select 5 of those objects
+
 
 # Installation and Use
 

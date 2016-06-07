@@ -1,12 +1,12 @@
 import { expect } from 'chai';
 import data from './data.json';
 import _ from 'ramda';
-import { namesAslistItems, app } from '../app.js';
+import { createListItem, app } from '../app.js';
 
 describe('tests for app', () => {
   it('renderNames should render repo names as list items', () => {
     // const listOfNames = renderNames(data);
-    const listOfNames = _.map(namesAslistItems)(data);
+    const listOfNames = _.map(createListItem)(data);
     console.log(listOfNames);
     expect(listOfNames).to.be.an('array');
   });
