@@ -1,0 +1,26 @@
+{
+  "name": "functors",
+  "version": "1.0.0",
+  "description": "for learning rxjs and function programming",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/epicallan/Rx-Fp"
+  },
+  "main": "maybe.js",
+  "scripts": {},
+  "keywords": [
+    "functional"
+  ],
+  "author": "epicallan.al@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^2.9.0",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.8.0",
+    "eslint-plugin-jsx-a11y": "^1.2.0",
+    "eslint-plugin-react": "^5.1.1"
+  },
+  "dependencies": {
+    "ramda": "^0.21.0"
+  }
+}
