@@ -23,3 +23,13 @@ Maybe.prototype.map = function map(fn) {
 const match = _.curry((regex, str) => str.match(regex));
 
 Maybe.of('Allan Lukwago').map(_.compose(console.log, match(/al/gi)));
+
+const student = {
+  name: 'Dinah',
+  age: 14,
+};
+
+Maybe.of(student).map(_.prop('age')).map(_.compose(console.log, _.add(10)));
+
+
+Maybe.of(student).map(_.prop('class')).map(console.log);
