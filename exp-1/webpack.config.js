@@ -1,12 +1,11 @@
 var path = require('path');
 var webpack = require('webpack');
-var themesPath = path.join(__dirname, 'wp/wp-content/themes/di-theme');
 
 module.exports = {
   devtool: 'source-maps',
   entry: [
-    path.join(themesPath, 'js/main.js'),
-    'webpack-dev-server/client?http://localhost:3001',
+    path.join(__dirname, 'src/app.js'),
+    'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/dev-server',
   ],
   output: {

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Rx from 'rxjs/Rx';
 import _ from 'ramda';
-
+import './io.js';
 
 const setHtml = _.curry((sel, html) =>
   (document.getElementById(sel).innerHTML = html.toString().replace(/,/g, '')));

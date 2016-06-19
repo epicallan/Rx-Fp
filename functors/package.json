@@ -8,6 +8,7 @@
   },
   "main": "maybe.js",
   "scripts": {
+    "lint": "eslint io.js",
     "either": "nodemon --ignore node_modules either.js",
     "maybe": "nodemon --ignore node_modules maybe.js"
   },
