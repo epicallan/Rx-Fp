@@ -39,13 +39,18 @@ Maybe.of(student)
   .map(console.log);
 
 // Monads
-// Maybe.prototype.join = function join() {
-//   return this.isNothing() ? Maybe.of(null) : this.value;
-// };
+/* eslint-disable func-names */
+Maybe.prototype.join = function () {
+  return this.isNothing() ? Maybe.of(null) : this.value;
+};
 
-// function join(mma) {
-//   return mma.join();
-// }
+function join(mma) {
+  return mma.join();
+}
+//  chain :: Monad m => (a -> m b) -> m a -> m b
+const chain = _.curry(function(f, m){
+  return m.map(f).join(); // or compose(join, map(f))(m)
+});
 //  safeProp :: Key -> {Key: a} -> Maybe a
 const safeProp = _.curry((x, obj) => new Maybe(obj[x]));
 
@@ -63,9 +68,8 @@ const streetAddresses = {
 };
 
 
-// const street = safeProp('addresses')(streetAddresses);
-
-
-const firstAddressStreet = _.compose(_.map(safeHead), safeProp('addresses'));
-const street = firstAddressStreet(streetAddresses);
-console.log(street.value.value);
+const firstAddressStreet = _.compose(
+  join, _.map(safeProp('street')), join, _.map(safeHead), safeProp('addresses')
+);
+const street = firstAddressStreet(streetAddresses).value;
+console.log(street);
