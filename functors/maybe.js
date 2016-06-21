@@ -48,9 +48,7 @@ function join(mma) {
   return mma.join();
 }
 //  chain :: Monad m => (a -> m b) -> m a -> m b
-const chain = _.curry(function(f, m){
-  return m.map(f).join(); // or compose(join, map(f))(m)
-});
+const chain = _.curry((f, m) => m.map(f).join()); // or compose(join, map(f))(m);
 //  safeProp :: Key -> {Key: a} -> Maybe a
 const safeProp = _.curry((x, obj) => new Maybe(obj[x]));
 
@@ -72,4 +70,11 @@ const firstAddressStreet = _.compose(
   join, _.map(safeProp('street')), join, _.map(safeHead), safeProp('addresses')
 );
 const street = firstAddressStreet(streetAddresses).value;
-console.log(street);
+console.log(1, street);
+
+
+const firstAddressStreet2 = _.compose(
+  chain(safeProp('street')), chain(safeHead), safeProp('addresses')
+);
+const street2 = firstAddressStreet2(streetAddresses).value;
+console.log(2, street2);
