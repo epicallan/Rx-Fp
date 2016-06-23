@@ -1,24 +1,13 @@
-// simple maybe functor with internal state
+/* eslint-disable prefer-arrow-callback*/
+/* eslint-disable func-names */
+const {
+  Maybe,
+  chain,
+  safeProp,
+  safeHead,
+  join
+} = require('./lib/Maybe.js');
 const _ = require('ramda');
-
-function Maybe(x) {
-  this.value = x;
-}
-
-Maybe.of = function of(x) { // static method
-  return new Maybe(x);
-};
-
-Maybe.prototype.isNothing = function isNothing() { // instance method (public)
-  const isValid = this.value === null || this.value === undefined;
-  return isValid;
-};
-
-Maybe.prototype.map = function map(fn) {
-  return this.isNothing() ? Maybe.of(null) : Maybe.of(fn(this.value));
-};
-
-// use cases
 
 const match = _.curry((regex, str) => str.match(regex));
 
@@ -38,27 +27,6 @@ Maybe.of(student)
   .map(_.prop('class'))
   .map(console.log);
 
-// Monads
-/* eslint-disable func-names */
-Maybe.prototype.join = function () {
-  return this.isNothing() ? Maybe.of(null) : this.value;
-};
-
-Maybe.prototype.chain = function (f) {
-  return this.map(f).join();
-};
-
-function join(mma) {
-  return mma.join();
-}
-//  chain :: Monad m => (a -> m b) -> m a -> m b
-const chain = _.curry((f, m) => m.map(f).join()); // or compose(join, map(f))(m);
-//  safeProp :: Key -> {Key: a} -> Maybe a
-const safeProp = _.curry((x, obj) => new Maybe(obj[x]));
-
-//  safeHead :: [a] -> Maybe a
-const safeHead = safeProp(0);
-
 const streetAddresses = {
   addresses: [{
     street: {
@@ -68,7 +36,6 @@ const streetAddresses = {
     postcode: 'WC2N',
   }],
 };
-
 
 const firstAddressStreet = _.compose(
   join, _.map(safeProp('street')), join, _.map(safeHead), safeProp('addresses')
@@ -81,7 +48,7 @@ const firstAddressStreet2 = _.compose(
 );
 const street2 = firstAddressStreet2(streetAddresses).value;
 console.log(2, street2);
-/* eslint-disable prefer-arrow-callback*/
+
 const val = Maybe.of(3).chain(function (three) {
   return Maybe.of(2).map(_.add(three));
 }).value;
