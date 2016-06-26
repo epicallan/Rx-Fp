@@ -9,9 +9,11 @@
   "main": "maybe.js",
   "scripts": {
     "lint": "eslint io.js",
-    "exercise":"nodemon --ignore node_modules exercise.js",
+    "exercise": "nodemon --ignore node_modules exercise.js",
     "either": "nodemon --ignore node_modules either.js",
-    "maybe": "nodemon --ignore node_modules maybe.js"
+    "maybe": "nodemon --ignore node_modules maybe.js",
+    "lift": "nodemon --ignore node_modules lift.js",
+    "gen": "babel-node gen.js"
   },
   "keywords": [
     "functional",
@@ -20,6 +22,10 @@
   "author": "epicallan.al@gmail.com",
   "license": "MIT",
   "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-preset-stage-3": "^6.5.0",
     "eslint": "^2.9.0",
     "eslint-config-airbnb": "^9.0.1",
     "eslint-plugin-import": "^1.8.0",
