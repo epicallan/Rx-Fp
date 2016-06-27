@@ -13,6 +13,7 @@
     "either": "nodemon --ignore node_modules either.js",
     "maybe": "nodemon --ignore node_modules maybe.js",
     "lift": "nodemon --ignore node_modules lift.js",
+    "af": "nodemon --ignore node_modules applicative-functors.js",
     "gen": "babel-node gen.js"
   },
   "keywords": [
