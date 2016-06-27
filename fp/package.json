@@ -1,7 +1,7 @@
 {
-  "name": "functors",
+  "name": "fp",
   "version": "1.0.0",
-  "description": "for learning rxjs and function programming",
+  "description": "for learning and testing function programming concepts",
   "repository": {
     "type": "git",
     "url": "https://github.com/epicallan/Rx-Fp"
@@ -14,11 +14,13 @@
     "maybe": "nodemon --ignore node_modules maybe.js",
     "lift": "nodemon --ignore node_modules lift.js",
     "af": "nodemon --ignore node_modules applicative-functors.js",
+    "lenses": "nodemon --ignore node_modules lenses.js",
     "gen": "babel-node gen.js"
   },
   "keywords": [
     "functional",
-    "ramda"
+    "ramda",
+    "fp"
   ],
   "author": "epicallan.al@gmail.com",
   "license": "MIT",
@@ -35,6 +37,10 @@
     "nodemon": "^1.9.2"
   },
   "dependencies": {
-    "ramda": "^0.21.0"
+    "data.maybe": "^1.2.2",
+    "data.task": "^3.1.0",
+    "immutable": "^3.8.1",
+    "ramda": "^0.21.0",
+    "ramda-lens": "github:ramda/ramda-lens"
   }
 }

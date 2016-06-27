@@ -4,6 +4,7 @@ const { Maybe } = require('./lib/Maybe.js');
 Maybe.prototype.ap = function (otherContainer) {
   return otherContainer.map(this.value); // this.value is a function
 };
+
 const liftA2 = _.curry(function (f, functor1, functor2) {
   return functor1.map(f).ap(functor2);
 });
